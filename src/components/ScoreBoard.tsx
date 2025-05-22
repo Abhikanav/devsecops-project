@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, User, Users } from 'lucide-react';
-{/* Token updated & comment in ScoreBoard.tsx - as This is a JSX comment */} 
+{/* update devsecops-project/tiktaktoe-app  , so comment in ScoreBoard.tsx - as This is a JSX comment */} 
 interface ScoreBoardProps {
   scores: {
     X: number;
