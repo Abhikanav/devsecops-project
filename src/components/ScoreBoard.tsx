@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, User, Users } from 'lucide-react';
-{/* update devsecops-project latest Private , so comment in ScoreBoard.tsx - as This is a JSX comment */} 
+{/* akm update devsecops-project latest Private , so comment in ScoreBoard.tsx - as This is a JSX comment */} 
 interface ScoreBoardProps {
   scores: {
     X: number;
