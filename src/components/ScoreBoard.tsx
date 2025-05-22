@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, User, Users } from 'lucide-react';
-{/* new added commanet as This is a JSX comment */} 
+{/* Token updated , so added comment in ScoreBoard.tsx - as This is a JSX comment */} 
 interface ScoreBoardProps {
   scores: {
     X: number;
