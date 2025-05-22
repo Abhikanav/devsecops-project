@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, User, Users } from 'lucide-react';
-{/* This is a JSX comment */} 
+{/* new added commanet as This is a JSX comment */} 
 interface ScoreBoardProps {
   scores: {
     X: number;
