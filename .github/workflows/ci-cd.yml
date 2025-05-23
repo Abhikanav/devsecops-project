@@ -123,8 +123,9 @@ jobs:
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
+        run: echo "ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}"
         with:
-          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          image-ref:ghcr.io/ ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           format: 'table'
           exit-code: '0'
           ignore-unfixed: true
