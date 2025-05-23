@@ -48,9 +48,10 @@ jobs:
         run: npm run lint
             
   security-check:
-     name: Run Trivy vulnerability scanner
+     name: Run Trivy scanner  # vulnerability scan
      runs-on: ubuntu-latest
      steps:
+         - name: Checkout code
          - uses: actions/checkout@v4
          - name: Trivy Installation
            run: |
