@@ -50,7 +50,7 @@ jobs:
   security-check:
      name: Run Trivy vulnerability scanner
      runs-on: ubuntu-latest
-      steps:
+     steps:
          - uses: actions/checkout@v4
          - name: Trivy Installation
            run: |
