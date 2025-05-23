@@ -144,7 +144,7 @@ jobs:
        #   severity: 'CRITICAL,HIGH'
       - name: Run Trivy Image Scan
         run: |
-          trivy image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
+          trivy image --scanners vuln ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
 
   update-k8s:
     name: Update Kubernetes Deployment
