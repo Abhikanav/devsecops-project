@@ -125,12 +125,13 @@ jobs:
         uses: aquasecurity/trivy-action@master
         run: echo "ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}"
         with:
-          image-ref:"ghcr.io/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
-          format: 'table'
-          exit-code: '0'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
+          image-ref:${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          format:'table'
+          exit-code:'0'
+          scanners:'vuln'
+          ignore-unfixed:true
+          vuln-type:'os,library'
+          severity:'CRITICAL,HIGH'
       
       - name: Push Docker image
         uses: docker/build-push-action@v5
