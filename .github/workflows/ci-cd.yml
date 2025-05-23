@@ -139,9 +139,9 @@ jobs:
      - name: Debug image reference 
         run: echo "ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
-    - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@master
-      with:
+     - name: Run Trivy vulnerability scanner
+       uses: aquasecurity/trivy-action@master
+       with:
         image-ref: ghcr.io/${{ env.IMAGE_NAME }}:${{ github.sha }}
         format: 'table'
         exit-code: '1'   # Fail pipeline on vulnerability detection
