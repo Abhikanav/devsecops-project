@@ -139,15 +139,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Install Trivy
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y trivy
       
-      - name: Run Trivy vulnerability scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          #image-ref: ghcr.io/${{ github.repository }}:${{ needs.docker.outputs.image_tag }}
-          #image-ref: ghcr.io/Abhikanav/devsecops-project:${{ needs.docker.outputs.image_tag }}
-          image-ref: ghcr.io/Abhikanav/devsecops-project:latest
-          #image-ref: ghcr.io/${{ github.repository }}:${{ steps.set_output.outputs.image_tag }}
-          scanners: vuln
+      - name: Run Trivy Scan
+        env:
+          REGISTRY: ghcr.io
+          IMAGE_NAME: ${{ github.repository }}
+          IMAGE_TAG: ${{ needs.docker.outputs.image_tag }}
+        run: |
+          trivy image --scanners vuln ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+        
   update-k8s: 
     name: Update Kubernetes Deployment
     runs-on: ubuntu-latest
