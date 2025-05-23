@@ -47,7 +47,7 @@ jobs:
       - name: Run ESLint
         run: npm run lint
             
-          security-check:
+security-check:
            name: Run Trivy scanner  
            runs-on: ubuntu-latest
            steps:
